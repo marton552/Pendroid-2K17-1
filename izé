@@ -1,5 +1,6 @@
 1/2(asin(gd/v**2)
 90-1/2(asin(gd/v**2)
 y0+xtanθ-(gx**2/(2(vcosθ)**2))
+atan((v**2+-rt(2, v**4-g(gx**2+2yv**2))/gx)
 
-Ha valaki találna közegellenállásos egyenletet, az jó lenne
+Ha valaki találna (vagy írna) közegellenállásos egyenletet, az jó lenne
