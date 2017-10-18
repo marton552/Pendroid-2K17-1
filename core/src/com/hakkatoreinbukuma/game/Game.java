@@ -8,12 +8,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Game extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture img;
+	Texture agyu;
+	Texture kerek;
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+		agyu = new Texture("ágyú.png");
+		kerek = new Texture("kerék.png");
 	}
 
 	@Override
@@ -21,13 +23,16 @@ public class Game extends ApplicationAdapter {
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
-		batch.draw(img, 0, 0);
+		batch.draw(agyu, 0, 0);
+		batch.draw(kerek, 0, 0);
 		batch.end();
 	}
 	
 	@Override
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
+		agyu.dispose();
+		kerek.dispose();
+
 	}
 }
