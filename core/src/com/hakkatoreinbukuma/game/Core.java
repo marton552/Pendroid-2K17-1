@@ -6,6 +6,7 @@ public class Core {
     }
 
     public float[] getArc(){
-        //return false;
+	float[] arc = {1.0f, 1.0f};
+        return arc;
     }
 }
