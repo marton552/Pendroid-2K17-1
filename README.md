@@ -17,7 +17,7 @@ szükséges további bemenetek bekérésére, mint például felületi légellen
 
 # Leadási határidő: 2017.október 27. péntek
 
-===================================================================================================
+=========================================================================================
 
 - [X] Szög számítása X, Y, v0 bemenetekből
 - [ ] Y számítása X, v0, szög bemenetekből
