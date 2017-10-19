@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 
 public class Game extends ApplicationAdapter {
@@ -31,13 +32,18 @@ public class Game extends ApplicationAdapter {
 	public void render () {
 		float mx = Gdx.input.getX();
 		float my = Gdx.input.getY();
-		Vector2 mouse = new Vector2(mx, my);
-		Vector2 agyuv = new Vector2(0, 0);
-		Vector2 ang = mouse - agyuv;
-		float angle = (float)Math.toDegrees(Math.atan2(my - asd.getY(), mx - asd.getX()));
+		//float angle = (float) Math.asin(Math.sqrt(mx*mx + my*my));
+		//float angle = (float) Math.atan(my / mx);
+		float pos1 = 0;
+		float pos2 = 0;
 
+		float angle = (MathUtils.radiansToDegrees * (float)Math.atan((Gdx.graphics.getHeight() - my) / mx));
 
-		Gdx.gl.glClearColor(1, 0, 0, 1);
+		//int deltaX = x2 - x1;
+		//int deltaY = y2 - y1;
+		//int rad = Math.atan2(deltaY, deltaX);
+
+        Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
 

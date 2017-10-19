@@ -1,11 +1,15 @@
+package com.hakkatoreinbukuma.game;
 
+import com.badlogic.gdx.scenes.scene2d.Actor;
 
-public class Agyu extends {
-	float angle = 0;
-	public void render(){
-		//
-	}
-	public void create(){
-		//
-	}
+public class Agyu extends MyActor {
+    float angle = 0;
+
+    public Agyu(){
+
+    }
+
+    public void render(){
+
+    }
 }
