@@ -1,8 +1,8 @@
 package com.hakkatoreinbukuma.game;
 
-/**
- * Created by tanulo on 2017. 10. 19..
- */
+public abstract class MyStage {
+    public void render(){}
+    public void create() {}
+    public void destroy() {}
 
-public class MyStage {
 }
