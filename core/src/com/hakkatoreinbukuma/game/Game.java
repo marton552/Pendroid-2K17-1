@@ -51,7 +51,7 @@ public class Game extends ApplicationAdapter {
 		asd.draw(batch);
 
 
-		batch.draw(kerek, 0, 0);
+		batch.draw(kerek, 25, 0);
 		batch.end();
 	}
 	
