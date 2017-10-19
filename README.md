@@ -11,8 +11,22 @@ Fontos, hogy a szoftver vegye észre és figyelmeztesse a felhasználót a hián
 kitöltött mezőkre.
 
 Minden további funkció megvalósítása plusz pontot ér. A megvalósított plusz funkciókat a forráskód
-elején megjegyzésben fel kell sorolni. Ilyen funkciók lehetnek például a közegellenállás –, széljárás
+elején megjegyzésben fel kell sorolni. Ilyen funkciók lehetnek például a közegellenállás, széljárás
 figyelembevétele és/vagy röppálya animálása, zene stb. Megjegyzés: az új funkciókhoz valószínűleg
 szükséges további bemenetek bekérésére, mint például felületi légellenállás, tömeg stb.
 
 # Leadási határidő: 2017.október 27. péntek
+
+===================================================================================================
+
+- [X] Szög számítása X, Y, v0 bemenetekből
+- [ ] Y számítása X, v0, szög bemenetekből
+- [ ] Menü a programnak
+- [ ] Zene
+- [ ] Betöltő képernyő
+- [ ] Skinek az ágyúkhoz
+- [ ] Skinek a lövedékekhez
+- [ ] Számolós mód
+- [ ] Jákék mód
+- [ ] Easter egg
+
