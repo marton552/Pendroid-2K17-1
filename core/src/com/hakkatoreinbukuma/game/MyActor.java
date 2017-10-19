@@ -1,5 +1,8 @@
 package com.hakkatoreinbukuma.game;
 
-public abstract class MyActor {
-        
+import com.badlogic.gdx.scenes.scene2d.Actor;
+
+public abstract class MyActor extends Actor {
+    abstract public void update(float dt);
+    abstract public void destroy();
 }

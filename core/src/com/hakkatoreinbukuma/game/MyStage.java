@@ -1,8 +1,10 @@
 package com.hakkatoreinbukuma.game;
 
-public abstract class MyStage {
-    public void render(){}
-    public void create() {}
-    public void destroy() {}
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+public abstract class MyStage {
+    abstract public void render(SpriteBatch batch);
+    abstract public void update(float dt);
+    abstract public void create();
+    abstract public void destroy();
 }
