@@ -14,7 +14,7 @@ public class LoadingScreen extends MyScreen {
     }
 	BitmapFont bitmapFont = new BitmapFont();
 
-    @Override
+	 @Override
 	public void show() {
 	    Assets.manager.finishLoading();
 		Assets.load();

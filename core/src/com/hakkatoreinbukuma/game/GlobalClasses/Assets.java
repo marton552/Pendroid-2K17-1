@@ -38,10 +38,29 @@ public class Assets {
 			= new AssetDescriptor<BitmapFont>(fontParameter.fontFileName, BitmapFont.class, fontParameter);
 */
 
-	public static final AssetDescriptor<Texture> AGYU_TEXTURE
-			= new AssetDescriptor<Texture>("agyu.png", Texture.class);
-	public static final AssetDescriptor<Texture> BG_TEXTURE
-			= new AssetDescriptor<Texture>("back2.png", Texture.class);
+	public static final AssetDescriptor<Texture> AGYU_TEXTURE = new AssetDescriptor<Texture>("agyu.png", Texture.class);
+	public static final AssetDescriptor<Texture> BG_TEXTURE = new AssetDescriptor<Texture>("back2.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> KEREK_1 = new AssetDescriptor<Texture>("kerek/wheel1.png", Texture.class);
+	public static final AssetDescriptor<Texture> KEREK_2 = new AssetDescriptor<Texture>("kerek/wheel2.png", Texture.class);
+	public static final AssetDescriptor<Texture> KEREK_3 = new AssetDescriptor<Texture>("kerek/wheel3.png", Texture.class);
+	public static final AssetDescriptor<Texture> KEREK_4 = new AssetDescriptor<Texture>("kerek/wheel4.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> AGYU_1 = new AssetDescriptor<Texture>("cannon/cannon1.png", Texture.class);
+	public static final AssetDescriptor<Texture> AGYU_2 = new AssetDescriptor<Texture>("cannon/cannon2.png", Texture.class);
+	public static final AssetDescriptor<Texture> AGYU_3 = new AssetDescriptor<Texture>("cannon/cannon3.png", Texture.class);
+	public static final AssetDescriptor<Texture> AGYU_4 = new AssetDescriptor<Texture>("cannon/cannon4.png", Texture.class);
+	public static final AssetDescriptor<Texture> AGYU_5 = new AssetDescriptor<Texture>("cannon/cannon5.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> LOVEDEK_1 = new AssetDescriptor<Texture>("bullet/bullet1.png", Texture.class);
+	public static final AssetDescriptor<Texture> LOVEDEK_2 = new AssetDescriptor<Texture>("bullet/bullet2.png", Texture.class);
+	public static final AssetDescriptor<Texture> LOVEDEK_3 = new AssetDescriptor<Texture>("bullet/bullet3.png", Texture.class);
+	public static final AssetDescriptor<Texture> LOVEDEK_4 = new AssetDescriptor<Texture>("bullet/bullet4.png", Texture.class);
+	public static final AssetDescriptor<Texture> LOVEDEK_5 = new AssetDescriptor<Texture>("bullet/bullet5.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> ANIM_KACSA = new AssetDescriptor<Texture>("anim/duck.png", Texture.class);
+	public static final AssetDescriptor<Texture> ANIM_ROBBANAS = new AssetDescriptor<Texture>("anim/robbanas.png", Texture.class);
+	public static final AssetDescriptor<Texture> ANIM_LOADING = new AssetDescriptor<Texture>("anim/loading.png", Texture.class);
 
     public static void prepare() {
 		manager = new AssetManager();
@@ -55,8 +74,30 @@ public class Assets {
 		manager.setLoader(BitmapFont.class, ".otf", new FreetypeFontLoader(resolver));
 
 
-        manager.load(AGYU_TEXTURE);
+		manager.load(AGYU_TEXTURE);
 		manager.load(BG_TEXTURE);
+
+		manager.load(KEREK_1);
+		manager.load(KEREK_2);
+		manager.load(KEREK_3);
+		manager.load(KEREK_4);
+
+		manager.load(AGYU_1);
+		manager.load(AGYU_2);
+		manager.load(AGYU_3);
+		manager.load(AGYU_4);
+		manager.load(AGYU_5);
+
+		manager.load(LOVEDEK_1);
+		manager.load(LOVEDEK_2);
+		manager.load(LOVEDEK_3);
+		manager.load(LOVEDEK_4);
+		manager.load(LOVEDEK_5);
+
+		manager.load(ANIM_KACSA);
+		manager.load(ANIM_LOADING);
+		manager.load(ANIM_ROBBANAS);
+
 	}
 
     public static void afterLoaded() {
