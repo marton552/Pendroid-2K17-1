@@ -1,8 +1,14 @@
 package com.hakkatoreinbukuma.game;
 
-public class Kerek extends MyActor{
+import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.MyActor;
 
+public class Kerek extends MyActor {
 
+    @Override
+    public void init() {
+
+    }
+/*
     @Override
     public void update(float dt) {
 
@@ -11,5 +17,5 @@ public class Kerek extends MyActor{
     @Override
     public void destroy() {
 
-    }
+    }*/
 }
