@@ -9,13 +9,23 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.hakkatoreinbukuma.game.GlobalClasses.Assets;
+import com.hakkatoreinbukuma.game.MyBaseClasses.Game.MyGame;
 
-public class Game extends ApplicationAdapter {
+public class MyGdxGame extends MyGame {
 	SpriteBatch batch;
 	Texture agyu;
 	Texture kerek;
 	Sprite asd;
-	
+
+	@Override
+	public void create() {
+		super.create();
+		Assets.prepare();
+		setScreen(new LoadingScreen(this));
+	}
+
+	/*
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
@@ -54,5 +64,6 @@ public class Game extends ApplicationAdapter {
 		kerek.dispose();
 
 	}
+	*/
 }
 
