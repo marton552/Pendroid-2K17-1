@@ -4,26 +4,28 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.hakkatoreinbukuma.game.GlobalClasses.Assets;
 import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.MyActor;
+import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 
-public class Agyu extends MyActor {
+public class Agyu extends OneSpriteStaticActor {
     float angle = 0;
-    Texture texture = new Texture("agyu");
+
+    public Agyu() {
+        super(Assets.manager.get(Assets.AGYU_TEXTURE));
+    }
 
     @Override
     public void init() {
 
     }
-/*
-    @Override
-    public void update(float dt) {
-        float mx = Gdx.input.getX();
-        float my = Gdx.input.getY();
 
-        angle = (MathUtils.radiansToDegrees * (float)Math.atan((Gdx.graphics.getHeight() - my) / mx));
+    public void setAngle(float angle) {
+
+        //angle = MathUtils.radiansToDegrees * angle;
         setRotation(angle);
     }
-
+/*
     @Override
     public void destroy() {
     }*/

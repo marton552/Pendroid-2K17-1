@@ -39,7 +39,9 @@ public class Assets {
 */
 
 	public static final AssetDescriptor<Texture> AGYU_TEXTURE
-			= new AssetDescriptor<Texture>("agyu.jpg", Texture.class);
+			= new AssetDescriptor<Texture>("agyu.png", Texture.class);
+	public static final AssetDescriptor<Texture> BG_TEXTURE
+			= new AssetDescriptor<Texture>("back2.png", Texture.class);
 
     public static void prepare() {
 		manager = new AssetManager();
@@ -54,6 +56,7 @@ public class Assets {
 
 
         manager.load(AGYU_TEXTURE);
+		manager.load(BG_TEXTURE);
 	}
 
     public static void afterLoaded() {

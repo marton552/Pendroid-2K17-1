@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.hakkatoreinbukuma.game.GlobalClasses.Assets;
 import com.hakkatoreinbukuma.game.MyBaseClasses.Game.MyGame;
 
@@ -17,6 +18,14 @@ public class MyGdxGame extends MyGame {
 	Texture agyu;
 	Texture kerek;
 	Sprite asd;
+
+
+	public Slider.SliderStyle getSliderStyle(){
+		Slider.SliderStyle sliderStyle = new Slider.SliderStyle();
+
+		return sliderStyle;
+	}
+
 
 	@Override
 	public void create() {
