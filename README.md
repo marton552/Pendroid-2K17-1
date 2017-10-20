@@ -1,5 +1,5 @@
 #JÁTÉK CÍMNEK JÓ LESZ A 射手(ite) NÉV??? ez angolul a shooter-t jelenti.
-
+Nekem bármi jó lesz csak működjön.
 
 # Ballisztikai röppálya számító szoftver készítése Androidos környezetbe
 
@@ -27,9 +27,11 @@ szükséges további bemenetek bekérésére, mint például felületi légellen
 - [ ] Menü a programnak
 - [ ] Zene
 - [ ] Betöltő képernyő
-- [ ] Skinek az ágyúkhoz
-- [ ] Skinek a lövedékekhez
+- [X] Skinek az ágyúkhoz
+- [X] Skinek a lövedékekhez
 - [ ] Számolós mód
 - [ ] Jákék mód
 - [ ] Easter egg
-
+- [ ] Skinválasztó menü
+- [ ] Végén tesztelni telefonon is
+- [ ] Név a játéknak
