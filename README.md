@@ -1,3 +1,6 @@
+#JÁTÉK CÍMNEK JÓ LESZ A 射手(ite) NÉV??? ez angolul a shooter-t jelenti.
+
+
 # Ballisztikai röppálya számító szoftver készítése Androidos környezetbe
 
 A program célja, hogy a felhasználó ki tudja számíttatni, hogy bizonyos kezdősebességű lövedéket
