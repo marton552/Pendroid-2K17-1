@@ -11,6 +11,8 @@ import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 public class Agyu extends OneSpriteStaticActor {
     float angle = 0;
 
+    boolean isBlinking = false;
+
     public Agyu() {
         super(Assets.manager.get(Assets.AGYU_TEXTURE));
     }
@@ -20,12 +22,36 @@ public class Agyu extends OneSpriteStaticActor {
 
     }
 
+    public void setBlinking(boolean blinking){
+        isBlinking = blinking;
+        if (!isBlinking){
+            setVisible(true);
+        }
+    }
+
     public void setAngle(float angle) {
 
         //angle = MathUtils.radiansToDegrees * angle;
-        setRotation(angle);
+
+
+        if (!Float.isNaN(angle)) {
+            setRotation(angle);
+            setBlinking(false);
+        }else{
+            setBlinking(true);
+        }
     }
-/*
+
+
+    @Override
+    public void act(float delta) {
+        super.act(delta);
+        if (isBlinking){
+            setVisible(((int)(elapsedTime*8))%2==0);
+        }
+    }
+
+    /*
     @Override
     public void destroy() {
     }*/

@@ -34,5 +34,7 @@ public class GameScreen extends MyScreen {
         super.render(delta);
         gameStage.act(delta);
         gameStage.draw();
+        controlStage.act(delta);
+        controlStage.draw();
     }
 }

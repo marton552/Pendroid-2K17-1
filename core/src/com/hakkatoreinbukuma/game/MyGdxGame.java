@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.hakkatoreinbukuma.game.GlobalClasses.Assets;
 import com.hakkatoreinbukuma.game.MyBaseClasses.Game.MyGame;
 
@@ -22,7 +23,10 @@ public class MyGdxGame extends MyGame {
 
 	public Slider.SliderStyle getSliderStyle(){
 		Slider.SliderStyle sliderStyle = new Slider.SliderStyle();
-
+        sliderStyle.knobDown = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.BG_TEXTURE),0,0,10,10));
+        sliderStyle.knobOver = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.BG_TEXTURE),100,120,10,10));
+		sliderStyle.knob = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.BG_TEXTURE),310,320,10,10));
+		sliderStyle.background = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.BG_TEXTURE),0,200,400,20));
 		return sliderStyle;
 	}
 

@@ -18,6 +18,11 @@ public class GameStage extends MyStage {
     BackgroundActor backgroundActor;
 
 
+    private float v = 100;
+    private float x = 100;
+    private float y = 100;
+
+
     public GameStage(Batch batch, MyGdxGame game) {
         super(new ExtendViewport(1024, 576, new OrthographicCamera(1024, 576)), batch, game);
         agyu = new Agyu();
@@ -33,12 +38,27 @@ public class GameStage extends MyStage {
         addListener(new InputListener(){
             @Override
             public boolean mouseMoved(InputEvent event, float x, float y) {
-                float[] floats = Core.calcAngle(x,y,100f);
-                System.out.println(floats[0] + " - " + floats[1]);
-                agyu.setAngle(floats[1]);
+                setXY(x,y);
                 return super.mouseMoved(event, x, y);
             }
         });
+        agyuChanged();
+    }
+
+    public void setXY(float x, float y){
+        this.x = x;
+        this.y = y;
+        agyuChanged();
+    }
+
+    public void setV(float v){
+        this.v = v;
+        agyuChanged();
+    }
+
+    protected void agyuChanged(){
+        float[] floats = Core.calcAngle(x,y,v);
+        agyu.setAngle(floats[1]);
     }
 
     @Override

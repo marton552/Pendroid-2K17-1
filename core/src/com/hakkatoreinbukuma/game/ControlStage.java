@@ -2,11 +2,14 @@ package com.hakkatoreinbukuma.game;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.EventListener;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
+import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
@@ -24,18 +27,22 @@ public class ControlStage extends MyStage {
 
     GameStage gameStage;
 
-    public ControlStage(Batch batch, MyGdxGame game, GameStage gameStage) {
-        super(new FitViewport(1024, 576, new OrthographicCamera(1024, 576)), batch, game);
+    public ControlStage(Batch batch, MyGdxGame game, final GameStage gameStage) {
+        super(new ExtendViewport(1024, 576, new OrthographicCamera(1024, 576)), batch, game);
         this.gameStage =gameStage;
-        Slider slider = new Slider(10, 200, 1, false, game.getSliderStyle());
-        slider.addListener(new ClickListener(){
+        Slider slider = new Slider(10,400, 1, false, game.getSliderStyle());
+        slider.addCaptureListener(new ChangeListener() {
             @Override
-            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                super.touchUp(event, x, y, pointer, button);
-                System.out.println("Slider Klikk");
+            public void changed(ChangeEvent event, Actor actor) {
+                gameStage.setV(((Slider)actor).getValue());
+                System.out.println(((Slider)actor).getValue() + " m/s");
             }
         });
         addActor(slider);
+        slider.setPosition(getViewport().getWorldWidth()/2-200, getViewport().getWorldHeight()-50);
+        slider.setSize(400,20);
+        slider.setValue(200);
+        setDebugAll(true);
     }
 
     @Override
