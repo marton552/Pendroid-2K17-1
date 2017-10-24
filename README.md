@@ -1,6 +1,4 @@
-#JÁTÉK CÍMNEK JÓ LESZ A 射手(ite) NÉV??? ez angolul a shooter-t jelenti.
-Nekem bármi jó lesz csak működjön.
-
+# 射手
 # Ballisztikai röppálya számító szoftver készítése Androidos környezetbe
 
 A program célja, hogy a felhasználó ki tudja számíttatni, hogy bizonyos kezdősebességű lövedéket
@@ -22,16 +20,35 @@ szükséges további bemenetek bekérésére, mint például felületi légellen
 
 =========================================================================================
 
-- [X] Szög számítása X, Y, v0 bemenetekből
-- [ ] Y számítása X, v0, szög bemenetekből
-- [ ] Menü a programnak
+@666420
+- [X] Core.java: Szög számítása X, Y, v0 bemenetekből
+- [X] Core.java: Y számítása X, v0, szög bemenetekből
+- [ ] Core.java: Leghosszabb / -rövidebb idő
+- [ ] Core.java: Leghosszabb / -rövidebb út
+- [ ] Core.java: Leggyengébb / -erősebb v0
+
+@marton552
 - [ ] Zene
-- [ ] Betöltő képernyő
+
+@NvG8956XD02
+- [X] Játék háttér
+- [X] Menü háttér
+- [ ] Köralakú cucc a röppálya rajzolásához
+
+@marton552, @NvG8956XD02
 - [X] Skinek az ágyúkhoz
 - [X] Skinek a lövedékekhez
+
+@hormartin
+- [ ] Core -> calcHeight-el röppályarajz minden egérmozdításnál
+- [ ] Háttér a betöltő képernyőhöz
+
+@Mindenki
+- [ ] Menü a programnak
+- [ ] Zene
 - [ ] Számolós mód
 - [ ] Jákék mód
 - [ ] Easter egg
 - [ ] Skinválasztó menü
 - [ ] Végén tesztelni telefonon is
-- [ ] Név a játéknak
+- [X] Név a játéknak
