@@ -2,6 +2,8 @@ package com.hakkatoreinbukuma.game;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.EventListener;
@@ -16,10 +18,6 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.MyStage;
 
-/**
- * Created by tanulo on 2017. 10. 20..
- */
-
 public class ControlStage extends MyStage {
     public GameStage getGameStage() {
         return gameStage;
@@ -30,6 +28,7 @@ public class ControlStage extends MyStage {
     public ControlStage(Batch batch, MyGdxGame game, final GameStage gameStage) {
         super(new ExtendViewport(1024, 576, new OrthographicCamera(1024, 576)), batch, game);
         this.gameStage =gameStage;
+	//====================================================================
         Slider slider = new Slider(10,400, 1, false, game.getSliderStyle());
         slider.addCaptureListener(new ChangeListener() {
             @Override
@@ -39,6 +38,10 @@ public class ControlStage extends MyStage {
             }
         });
         addActor(slider);
+	//====================================================================
+	DataActor data = new DataActor();
+	addActor(data);
+	//====================================================================
         slider.setPosition(getViewport().getWorldWidth()/2-200, getViewport().getWorldHeight()-50);
         slider.setSize(400,20);
         slider.setValue(200);

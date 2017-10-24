@@ -1,5 +1,6 @@
 package com.hakkatoreinbukuma.game;
 
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -17,11 +18,9 @@ public class GameStage extends MyStage {
     Agyu agyu;
     BackgroundActor backgroundActor;
 
-
-    private float v = 100;
-    private float x = 100;
-    private float y = 100;
-
+	private float v = 100;
+	private float x = 100;
+	private float y = 100;
 
     public GameStage(Batch batch, MyGdxGame game) {
         super(new ExtendViewport(1024, 576, new OrthographicCamera(1024, 576)), batch, game);
@@ -59,8 +58,9 @@ public class GameStage extends MyStage {
     protected void agyuChanged(){
         float[] floats = Core.calcAngle(x,y,v);
 	if (Float.isNaN(floats[0]) || Float.isNaN(floats[1])){
-		System.out.println("Túl messze van; v0=" + v + ", x=" + x + ", y=" + y);
+		System.out.println("Túl messze van; v0=" + v + ", x=" + x + ", y=" + y); //Ezt kiírni valahova
 	} else {
+		//x, y, v0, szöget kiírni valahova
 		agyu.setAngle(floats[1]);
 	}
     }
