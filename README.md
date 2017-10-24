@@ -40,8 +40,10 @@ szükséges további bemenetek bekérésére, mint például felületi légellen
 - [X] Skinek a lövedékekhez
 
 @hormartin
+- [X] Menü
 - [ ] Core -> calcHeight-el röppályarajz minden egérmozdításnál
 - [ ] Háttér a betöltő képernyőhöz
+- [ ] Jelölőnégyzet a 2 megoldáshoz
 
 @Mindenki
 - [ ] Menü a programnak
