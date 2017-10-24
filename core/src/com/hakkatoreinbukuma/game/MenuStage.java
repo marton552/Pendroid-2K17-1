@@ -1,5 +1,6 @@
 package com.hakkatoreinbukuma.game;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
@@ -15,6 +16,7 @@ import com.hakkatoreinbukuma.game.GlobalClasses.Assets;
 import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.MyActor;
 import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.MyStage;
 import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
+import com.hakkatoreinbukuma.game.MyBaseClasses.UI.MyButton;
 
 public class MenuStage extends MyStage {
     public MenuStage(Batch batch, final MyGdxGame game) {
@@ -24,8 +26,7 @@ public class MenuStage extends MyStage {
 
         bgActor.setSize(getViewport().getWorldWidth(), getViewport().getWorldHeight());
 
-        TextButton playButton = new TextButton("Play", game.getButtonStyle());
-        playButton.setSize(300, 70);
+        MyButton playButton = new MyButton("Play", game.getButtonStyle());
         playButton.setPosition(getViewport().getWorldWidth() / 2 - playButton.getWidth() / 2, getViewport().getWorldHeight() - 300);
 
         playButton.addListener(new ClickListener(){
@@ -35,8 +36,29 @@ public class MenuStage extends MyStage {
                 game.setScreen(new GameScreen(game));
             }
         });
+
+        MyButton skinsButton = new MyButton("Skins", game.getButtonStyle());
+        skinsButton.setPosition(getViewport().getWorldWidth() / 2 - playButton.getWidth() / 2, getViewport().getWorldHeight() - 360);
+
+        MyButton aboutButton = new MyButton("About", game.getButtonStyle());
+        aboutButton.setPosition(getViewport().getWorldWidth() / 2 - playButton.getWidth() / 2, getViewport().getWorldHeight() - 420);
+
+        MyButton quitButton = new MyButton("Quit", game.getButtonStyle());
+        quitButton.setPosition(getViewport().getWorldWidth() / 2 - playButton.getWidth() / 2, getViewport().getWorldHeight() - 480);
+
+        quitButton.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                Gdx.app.exit();
+            }
+        });
+
         addActor(bgActor);
         addActor(playButton);
+        addActor(skinsButton);
+        addActor(aboutButton);
+        addActor(quitButton);
+
     }
 
     @Override
