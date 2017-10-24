@@ -14,7 +14,7 @@ public class Agyu extends OneSpriteStaticActor {
     boolean isBlinking = false;
 
     public Agyu() {
-        super(Assets.manager.get(Assets.AGYU_TEXTURE));
+        super(Assets.manager.get(Assets.AGYU_5));
     }
 
     @Override

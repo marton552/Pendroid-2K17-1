@@ -23,23 +23,24 @@ public class Assets {
 	public static AssetManager manager;
 
 
-	/*
+
 	public static final String CHARS = "0123456789öüóqwertzuiopőúasdfghjkléáűíyxcvbnm'+!%/=()ÖÜÓQWERTZUIOPŐÚASDFGHJKLÉÁŰÍYXCVBNM?:_*<>#&@{}[],-.";
 
 
 	static final FreetypeFontLoader.FreeTypeFontLoaderParameter fontParameter = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
 	static {
 		fontParameter.fontFileName = "alegreyaregular.otf";
-		fontParameter.fontParameters.size = 50;
+		fontParameter.fontParameters.size = 30;
 		fontParameter.fontParameters.characters = CHARS;
 		fontParameter.fontParameters.color = Color.WHITE;
 	}
 	public static final AssetDescriptor<BitmapFont> ALEGREYAREGULAR_FONT
 			= new AssetDescriptor<BitmapFont>(fontParameter.fontFileName, BitmapFont.class, fontParameter);
-*/
 
-	public static final AssetDescriptor<Texture> AGYU_TEXTURE = new AssetDescriptor<Texture>("agyu.png", Texture.class);
+
+	//public static final AssetDescriptor<Texture> AGYU_TEXTURE = new AssetDescriptor<Texture>("cannon/cannon5.png", Texture.class);
 	public static final AssetDescriptor<Texture> BG_TEXTURE = new AssetDescriptor<Texture>("back2.png", Texture.class);
+	public static final AssetDescriptor<Texture> MENU_BG = new AssetDescriptor<Texture>("menu.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> KEREK_1 = new AssetDescriptor<Texture>("kerek/wheel1.png", Texture.class);
 	public static final AssetDescriptor<Texture> KEREK_2 = new AssetDescriptor<Texture>("kerek/wheel2.png", Texture.class);
@@ -62,7 +63,11 @@ public class Assets {
 	public static final AssetDescriptor<Texture> ANIM_ROBBANAS = new AssetDescriptor<Texture>("anim/robbanas.png", Texture.class);
 	public static final AssetDescriptor<Texture> ANIM_LOADING = new AssetDescriptor<Texture>("anim/loading.png", Texture.class);
 
-    public static void prepare() {
+	public static final AssetDescriptor<Texture> WHITE_TEXTURE = new AssetDescriptor<Texture>("ui_textures/white.png", Texture.class);
+	public static final AssetDescriptor<Texture> FULLWHITE_TEXTURE = new AssetDescriptor<Texture>("ui_textures/fullwhite.png", Texture.class);
+
+
+	public static void prepare() {
 		manager = new AssetManager();
 		Texture.setAssetManager(manager);
 	}
@@ -74,8 +79,9 @@ public class Assets {
 		manager.setLoader(BitmapFont.class, ".otf", new FreetypeFontLoader(resolver));
 
 
-		manager.load(AGYU_TEXTURE);
+//		manager.load(AGYU_TEXTURE);
 		manager.load(BG_TEXTURE);
+		manager.load(MENU_BG);
 
 		manager.load(KEREK_1);
 		manager.load(KEREK_2);
@@ -97,6 +103,11 @@ public class Assets {
 		manager.load(ANIM_KACSA);
 		manager.load(ANIM_LOADING);
 		manager.load(ANIM_ROBBANAS);
+
+		manager.load(WHITE_TEXTURE);
+		manager.load(FULLWHITE_TEXTURE);
+
+		manager.load(ALEGREYAREGULAR_FONT);
 
 	}
 
