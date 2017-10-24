@@ -23,6 +23,6 @@ public class Core {
 	}
 	public static float calcMaxHeight(float angle, float v0){
 		angle = angle*d2r;
-		return (float)(v0*v0)*(Math.sin(angle)*Math.sin(angle))/(2*grav);
+		return (float)((v0*v0)*(Math.sin(angle)*Math.sin(angle)))/(2f*grav);
 	}
 }

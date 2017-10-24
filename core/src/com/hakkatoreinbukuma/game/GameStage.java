@@ -58,7 +58,11 @@ public class GameStage extends MyStage {
 
     protected void agyuChanged(){
         float[] floats = Core.calcAngle(x,y,v);
-        agyu.setAngle(floats[1]);
+	if (Float.isNaN(floats[0]) || Float.isNaN(floats[1])){
+		System.out.println("Túl messze van; v0=" + v + ", x=" + x + ", y=" + y);
+	} else {
+		agyu.setAngle(floats[1]);
+	}
     }
 
     @Override

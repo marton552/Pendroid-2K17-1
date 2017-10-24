@@ -4,10 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.MyScreen;
 
-/**
- * Created by tanulo on 2017. 10. 20..
- */
-
 public class GameScreen extends MyScreen {
 
 
