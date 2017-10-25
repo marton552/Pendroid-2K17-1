@@ -19,7 +19,7 @@ public class GameStage extends MyStage {
 
     Agyu agyu;
     BackgroundActor backgroundActor;
-
+	MyLabel label;
 	private float v = 100;
 	private float x = 100;
 	private float y = 100;
@@ -29,7 +29,7 @@ public class GameStage extends MyStage {
         agyu = new Agyu();
         backgroundActor = new BackgroundActor(this);
 
-        MyLabel label = new MyLabel("Label", game.getLabelStyle());
+        label = new MyLabel("Label", game.getLabelStyle());
 
         addActor(backgroundActor);
         addActor(agyu);
@@ -62,9 +62,9 @@ public class GameStage extends MyStage {
     protected void agyuChanged(){
         float[] floats = Core.calcAngle(x,y,v);
 	if (Float.isNaN(floats[0]) || Float.isNaN(floats[1])){
-		System.out.println("Túl messze van; v0=" + v + ", x=" + x + ", y=" + y); //Ezt kiírni valahova
+		label.setText("Túl messze van\r\nv0=" + v + ", x=" + x + ", y=" + y);
 	} else {
-		//x, y, v0, szöget kiírni valahova
+		label.setText("x  = " + x + "\r\ny  = " + y + "\r\nv0 = " + v + "\r\na1 = " + floats[0] + "°\r\na2 = " + floats[1] + "°");
 		agyu.setAngle(floats[1]);
 	}
     }
