@@ -66,6 +66,8 @@ public class Assets {
 	public static final AssetDescriptor<Texture> WHITE_TEXTURE = new AssetDescriptor<Texture>("ui_textures/white.png", Texture.class);
 	public static final AssetDescriptor<Texture> FULLWHITE_TEXTURE = new AssetDescriptor<Texture>("ui_textures/fullwhite.png", Texture.class);
 
+	public static final AssetDescriptor<Texture> DOT_TEXTURE = new AssetDescriptor<Texture>("Pont.png", Texture.class);
+
 
 	public static void prepare() {
 		manager = new AssetManager();
@@ -106,6 +108,8 @@ public class Assets {
 
 		manager.load(WHITE_TEXTURE);
 		manager.load(FULLWHITE_TEXTURE);
+
+		manager.load(DOT_TEXTURE);
 
 		manager.load(ALEGREYAREGULAR_FONT);
 
