@@ -40,10 +40,18 @@ public class GameStage extends MyStage {
 
         addListener(new InputListener(){
             @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                super.touchUp(event, x, y, pointer, button);
+
+            }
+
+            @Override
             public boolean mouseMoved(InputEvent event, float x, float y) {
                 setXY(x,y);
                 return super.mouseMoved(event, x, y);
             }
+
+
         });
         agyuChanged();
     }
