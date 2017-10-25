@@ -38,10 +38,6 @@ public class ControlStage extends MyStage {
             }
         });
         addActor(slider);
-	//====================================================================
-	DataActor data = new DataActor();
-	addActor(data);
-	//====================================================================
         slider.setPosition(getViewport().getWorldWidth()/2-200, getViewport().getWorldHeight()-50);
         slider.setSize(400,20);
         slider.setValue(200);

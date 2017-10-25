@@ -6,12 +6,14 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.hakkatoreinbukuma.game.GlobalClasses.Assets;
 import com.hakkatoreinbukuma.game.MyBaseClasses.BackgroundActor;
 import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.MyStage;
 import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
+import com.hakkatoreinbukuma.game.MyBaseClasses.UI.MyLabel;
 
 public class GameStage extends MyStage {
 
@@ -27,9 +29,11 @@ public class GameStage extends MyStage {
         agyu = new Agyu();
         backgroundActor = new BackgroundActor(this);
 
+        MyLabel label = new MyLabel("Label", game.getLabelStyle());
+
         addActor(backgroundActor);
         addActor(agyu);
-
+        addActor(label);
         //setCameraResetToLeftBottomOfScreen();
         //((OrthographicCamera)getCamera()).zoom = 0.7f;
         //setCameraMoveToXY(128,72,0.5f,0.4f,100);
