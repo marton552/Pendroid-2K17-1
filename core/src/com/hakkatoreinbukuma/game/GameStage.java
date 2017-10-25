@@ -23,6 +23,7 @@ public class GameStage extends MyStage {
 	private float v = 100;
 	private float x = 100;
 	private float y = 100;
+	private OneSpriteStaticActor[20] dots;
 
     public GameStage(Batch batch, MyGdxGame game) {
         super(new ExtendViewport(1024, 576, new OrthographicCamera(1024, 576)), batch, game);
