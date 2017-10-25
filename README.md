@@ -23,7 +23,7 @@ szükséges további bemenetek bekérésére, mint például felületi légellen
 @666420
 - [X] Core.java: Szög számítása X, Y, v0 bemenetekből
 - [X] Core.java: Y számítása X, v0, szög bemenetekből
-- [ ] Core.java: v0 számítása X, Y, szög bemenetekből
+- [O] Core.java: v0 számítása X, Y, szög bemenetekből
 - [ ] Core.java: Repülési idő
 - [X] Core.java: Leggyengébb v0 szöge
 
