@@ -1,9 +1,13 @@
 package com.hakkatoreinbukuma.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.hakkatoreinbukuma.game.GlobalClasses.Assets;
 import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.MyScreen;
+import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.OneSpriteAnimatedActor;
+import com.hakkatoreinbukuma.game.MyBaseClasses.TitleScreen;
 
 
 public class LoadingScreen extends MyScreen {
@@ -13,6 +17,13 @@ public class LoadingScreen extends MyScreen {
 		super(game);
     }
 	BitmapFont bitmapFont = new BitmapFont();
+	TextureAtlas atlas = new TextureAtlas("atlasok/loading.atlas");
+	OneSpriteAnimatedActor loading = new OneSpriteAnimatedActor(atlas);
+	{
+		loading.setFps(60);
+		loading.setLooping(true);
+		loading.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+	}
 
 	 @Override
 	public void show() {
@@ -25,11 +36,13 @@ public class LoadingScreen extends MyScreen {
 		super.render(delta);
 
 		spriteBatch.begin();
-		bitmapFont.draw(spriteBatch,"Betöltés: " + Assets.manager.getLoadedAssets() + "/" + (Assets.manager.getQueuedAssets()+ Assets.manager.getLoadedAssets()) + " (" + ((int)(Assets.manager.getProgress()*100f)) + "%)", Gdx.graphics.getWidth()/2,Gdx.graphics.getHeight()/2);
+		loading.draw(spriteBatch, 1f);
+		loading.act(delta);
+		bitmapFont.draw(spriteBatch,"Betöltés: " + Assets.manager.getLoadedAssets() + "/" + (Assets.manager.getQueuedAssets()+ Assets.manager.getLoadedAssets()) + " (" + ((int)(Assets.manager.getProgress()*100f)) + "%)", 0, 0);
 		spriteBatch.end();
 		if (Assets.manager.update()) {
 			Assets.afterLoaded();
-			game.setScreen(new MenuScreen(game));
+			game.setScreen(new TitleScreen(game));
 		}
 	}
 

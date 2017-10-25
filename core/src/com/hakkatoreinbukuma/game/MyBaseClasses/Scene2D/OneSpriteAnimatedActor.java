@@ -27,6 +27,8 @@ public class OneSpriteAnimatedActor extends OneSpriteActor {
         this.looping = looping;
     }
 
+    public boolean isRunning(){ return running; }
+
     public int getActualFrame() {
         return actualFrame;
     }

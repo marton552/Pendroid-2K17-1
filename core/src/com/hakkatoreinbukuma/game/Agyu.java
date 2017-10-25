@@ -14,7 +14,7 @@ public class Agyu extends OneSpriteStaticActor {
     boolean isBlinking = false;
 
     public Agyu(MyGdxGame game) {
-        super(game.getAgyuTexture());
+        super(game.getAgyuTexture(game.agyuTexture));
     }
 
     @Override

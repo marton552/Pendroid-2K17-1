@@ -16,7 +16,9 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.hakkatoreinbukuma.game.GlobalClasses.Assets;
 import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.MyStage;
+import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 
 public class ControlStage extends MyStage {
     public GameStage getGameStage() {
@@ -37,11 +39,25 @@ public class ControlStage extends MyStage {
                 System.out.println(((Slider)actor).getValue() + " m/s");
             }
         });
-        addActor(slider);
         slider.setPosition(getViewport().getWorldWidth()/2-200, getViewport().getWorldHeight()-50);
         slider.setSize(400,20);
         slider.setValue(200);
         setDebugAll(true);
+
+        OneSpriteStaticActor fireButton = new OneSpriteStaticActor(Assets.manager.get(Assets.FIREBTN_TEXTURE));
+        fireButton.setSize(64, 54);
+        fireButton.setPosition(getViewport().getWorldWidth() - fireButton.getWidth() - 10, 10);
+
+        fireButton.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                gameStage.fire();
+            }
+        });
+
+        addActor(slider);
+        addActor(fireButton);
     }
 
     @Override
