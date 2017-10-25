@@ -11,7 +11,7 @@ public class Core {
     		return new float[] {megoldas1, megoldas2};
     	}
 	public static float calcHeight(float x, float angle, float v0){
-		float sin2_tan = Math.tan(angle) * Math.tan(angle);
+		float sin2_tan = (float) Math.tan(angle) * (float) Math.tan(angle);
 		return (float)(x*((-1f*grav)*sin2_tan+2f*(v0*v0)*Math.tan(angle)-(grav*x)))/(2f*(v0*v0));
 	}
 	public static float calcLowestV0Angle(float x, float y){
@@ -21,7 +21,7 @@ public class Core {
 		return (float)Math.asin(grav*distance/(v0*v0))*0.5f;
 	}
 	public static float calcMaxHeight(float angle, float v0){
-		float sin2_angle = Math.sin(angle) * Math.sin(angle);
+		float sin2_angle = (float) Math.sin(angle) * (float) Math.sin(angle);
 		return (float)((v0*v0)*(sin2_angle))/(2f*grav);
 	}
 }

@@ -85,8 +85,8 @@ public class GameStage extends MyStage {
 		agyu.setAngle(floats[ax]);
        		for(int i=0; i<dots.length; i++){
         		dots[i].setVisible(true);
-			dots[i].setPosition((WORLD_HEIGHT / dots.length) * i, Core.r2d * Core.calcHeight((WORLD_HEIGHT / dots.length) * i, floats[ax], v));
-			System.out.println(((WORLD_HEIGHT / dots.length) * i) + " " + Core.r2d * Core.calcHeight((WORLD_HEIGHT / dots.length) * i, floats[ax], v));
+			dots[i].setPosition((WORLD_HEIGHT / dots.length) * i, Core.r2d * Core.calcHeight((WORLD_HEIGHT / dots.length) * i, floats[ax] * Core.d2r, v));
+			System.out.println(((WORLD_HEIGHT / dots.length) * i) + " " + Core.r2d * Core.calcHeight((WORLD_HEIGHT / dots.length) * i, floats[ax] * Core.d2r, v));
 	        }
 		System.out.println("");
 	}
