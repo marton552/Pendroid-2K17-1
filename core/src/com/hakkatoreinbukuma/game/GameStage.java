@@ -69,11 +69,9 @@ public class GameStage extends MyStage {
     }
 
     protected void agyuChanged(){
-	float WORLD_HEIGHT = getViewport().getWorldWidth();
+	int WORLD_WIDTH = (int)getViewport().getWorldWidth();
 	int ax = 0;
         float[] floats = Core.calcAngle(x,y,v);
-        floats[0] *= Core.r2d;
-        floats[1] *= Core.r2d;
 
         if (Float.isNaN(floats[0]) || Float.isNaN(floats[1])){
 		label.setText("x  = " + x + "\r\ny  = " + y + "\r\nv0 = " + v + "\r\nTúl messze van\r\n");
@@ -83,10 +81,11 @@ public class GameStage extends MyStage {
 	} else {
 		label.setText("x  = " + x + "\r\ny  = " + y + "\r\nv0 = " + v + "\r\na1 = " + floats[0] + "°\r\na2 = " + floats[1] + "°");
 		agyu.setAngle(floats[ax]);
-       		for(int i=0; i<dots.length; i++){
+       		for(int i=0, pos=0; i<dots.length; i++){
+			pos = (WORLD_WIDTH / dots.length) * i;
         		dots[i].setVisible(true);
-			dots[i].setPosition((WORLD_HEIGHT / dots.length) * i, Core.r2d * Core.calcHeight((WORLD_HEIGHT / dots.length) * i, floats[ax] * Core.d2r, v));
-			System.out.println(((WORLD_HEIGHT / dots.length) * i) + " " + Core.r2d * Core.calcHeight((WORLD_HEIGHT / dots.length) * i, floats[ax] * Core.d2r, v));
+			dots[i].setPosition(pos, Core.r2d * Core.calcHeight(pos, floats[ax], v));
+			System.out.println(pos + " " + (Core.r2d * Core.calcHeight(pos, floats[ax], v)));
 	        }
 		System.out.println("");
 	}
