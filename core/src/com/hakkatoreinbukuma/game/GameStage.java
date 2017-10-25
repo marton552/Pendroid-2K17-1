@@ -23,12 +23,13 @@ public class GameStage extends MyStage {
 	private float v = 100;
 	private float x = 100;
 	private float y = 100;
-	private OneSpriteStaticActor[20] dots;
+	private OneSpriteStaticActor[] dots = new OneSpriteStaticActor[20];
 
     public GameStage(Batch batch, MyGdxGame game) {
         super(new ExtendViewport(1024, 576, new OrthographicCamera(1024, 576)), batch, game);
         agyu = new Agyu();
         backgroundActor = new BackgroundActor(this);
+
 
         label = new MyLabel("Label", game.getLabelStyle());
 
@@ -54,6 +55,12 @@ public class GameStage extends MyStage {
 
 
         });
+
+        for(int i=0; i<dots.length; i++){
+            dots[i] = new OneSpriteStaticActor(Assets.manager.get(Assets.DOT_TEXTURE));
+            addActor(dots[i]);
+        }
+
         agyuChanged();
     }
 
