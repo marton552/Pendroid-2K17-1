@@ -30,11 +30,11 @@ public class SkinMenuStage extends MyStage {
 
         addActor(bg);
 
-        cannonSet = new SkinChangeElement(getViewport().getWorldWidth() / 2 - 150, 100, 300, 80, this, game);
+        cannonSet = new SkinChangeElement(getViewport().getWorldWidth() / 2 - 150, 100, 300, 80, 1, 5, this, game);
 
-        bulletSet = new SkinChangeElement(getViewport().getWorldWidth() / 2 - 150, 190, 300, 80, this, game);
+        bulletSet = new SkinChangeElement(getViewport().getWorldWidth() / 2 - 150, 190, 300, 80, 2, 5, this, game);
 
-        wheelSet = new SkinChangeElement(getViewport().getWorldWidth() / 2 - 150, 280, 300, 80, this, game);
+        wheelSet = new SkinChangeElement(getViewport().getWorldWidth() / 2 - 150, 280, 300, 80, 3, 4, this, game);
 
         menuBtn = new MyButton("Menu", game.getButtonStyle());
         menuBtn.setPosition(getViewport().getWorldWidth() / 2 - menuBtn.getWidth() / 2, 10);
@@ -46,8 +46,16 @@ public class SkinMenuStage extends MyStage {
             }
         });
         addActor(menuBtn);
+    }
 
-
+    @Override
+    public void draw() {
+        super.draw();
+        getBatch().begin();
+        getBatch().draw(game.getAgyuTexture(game.agyuTexture), cannonSet.getTextureXY()[0] - game.getAgyuTexture(game.agyuTexture).getWidth() / 2, cannonSet.getTextureXY()[1] - game.getAgyuTexture(game.agyuTexture).getHeight() / 2);
+        getBatch().draw(game.getBulletTexture(game.bulletTexture), bulletSet.getTextureXY()[0] - 32, bulletSet.getTextureXY()[1] - 32, 64, 64 );
+        getBatch().draw(game.getWheelTexture(game.wheelTexture), wheelSet.getTextureXY()[0] - game.getWheelTexture(game.wheelTexture).getWidth() / 2, wheelSet.getTextureXY()[1] - game.getWheelTexture(game.wheelTexture).getHeight() / 2);
+        getBatch().end();
     }
 
     @Override
