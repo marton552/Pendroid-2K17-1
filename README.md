@@ -23,17 +23,18 @@ szükséges további bemenetek bekérésére, mint például felületi légellen
 @666420
 - [X] Core.java: Szög számítása X, Y, v0 bemenetekből
 - [X] Core.java: Y számítása X, v0, szög bemenetekből
-- [O] Core.java: v0 számítása X, Y, szög bemenetekből
+- [ ] Core.java: v0 számítása X, Y, szög bemenetekből
 - [ ] Core.java: Repülési idő
 - [X] Core.java: Leggyengébb v0 szöge
 
 @marton552
-- [ ] Zene
+- [X] Zene
+- [X] Hangok
 
 @NvG8956XD02
 - [X] Játék háttér
 - [X] Menü háttér
-- [ ] Köralakú cucc a röppálya rajzolásához
+- [X] Köralakú cucc a röppálya rajzolásához
 
 @marton552, @NvG8956XD02
 - [X] Skinek az ágyúkhoz
@@ -44,10 +45,10 @@ szükséges további bemenetek bekérésére, mint például felületi légellen
 - [ ] Core -> calcHeight-el röppályarajz minden egérmozdításnál
 - [ ] Háttér a betöltő képernyőhöz
 - [ ] Jelölőnégyzet a 2 megoldáshoz
-
 @Mindenki
+- [ ] Loading screen
 - [ ] Menü a programnak
-- [ ] Zene
+- [X] Zene
 - [ ] Számolós mód
 - [ ] Jákék mód
 - [ ] Easter egg
