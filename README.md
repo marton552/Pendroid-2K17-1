@@ -45,6 +45,7 @@ szükséges további bemenetek bekérésére, mint például felületi légellen
 - [ ] Core -> calcHeight-el röppályarajz minden egérmozdításnál
 - [ ] Háttér a betöltő képernyőhöz
 - [ ] Jelölőnégyzet a 2 megoldáshoz
+
 @Mindenki
 - [ ] Loading screen
 - [ ] Menü a programnak
