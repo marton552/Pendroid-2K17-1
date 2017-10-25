@@ -12,8 +12,11 @@ public class Core {
     	}
 	public static float calcHeight(float x, float angle, float v0){
 		angle *= d2r;
-		float sin2_tan = (float) Math.tan(angle) * (float) Math.tan(angle);
-		return (float)(x*((-1f*grav)*sin2_tan+2f*(v0*v0)*Math.tan(angle)-(grav*x)))/(2f*(v0*v0));
+		double tan2_angle = Math.tan(angle) * Math.tan(angle);
+		//float y = (float)(x*((-1f*grav)*tan2_angle+2f*(v0*v0)*Math.tan(angle)-(grav*x)))/(2f*(v0*v0));
+		double y = (-grav * (x*x) * tan2_angle + 2 * (v0*v0) * x * Math.tan(angle) - grav * (x*x))/(2 * (v0*v0));
+		System.out.println("Core.java > calcHeight(" + x + ", " + angle * r2d + ", " + v0 + ") = " + y);
+		return (float)y;
 	}
 	public static float calcLowestV0Angle(float x, float y){
 		return (float)Math.atan(y/x+Math.sqrt((y*y)/(x*x)+1f)) * r2d;

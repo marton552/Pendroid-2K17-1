@@ -89,20 +89,22 @@ public class GameStage extends MyStage {
 	} else {
 		label.setText("x  = " + x + "\r\ny  = " + y + "\r\nv0 = " + v + "\r\na1 = " + floats[0] + "°\r\na2 = " + floats[1] + "°");
 		agyu.setAngle(floats[ax]);
-       		for(int i=0, pos=0; i<dots.length; i++){
-			pos = (WORLD_WIDTH / dots.length) * i;
+
+		float pos;
+       		for(int i=0; i<dots.length; i++){
+			pos = (float)(WORLD_WIDTH / dots.length) * (float)i;
         		dots[i].setVisible(true);
-			dots[i].setPosition(pos, Core.r2d * Core.calcHeight(pos, floats[ax], v));
-			System.out.println(pos + " " + (Core.r2d * Core.calcHeight(pos, floats[ax], v)));
+			dots[i].setPosition(pos, Core.calcHeight(pos, floats[ax], v));
 	        }
+		System.out.println(Core.calcHeight(x, floats[ax], v));
 		System.out.println("");
 	}
     }
+
 
     @Override
     public void init() {
 
     }
-
 
 }
