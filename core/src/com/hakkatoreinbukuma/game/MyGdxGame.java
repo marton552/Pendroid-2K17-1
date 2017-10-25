@@ -26,6 +26,22 @@ public class MyGdxGame extends MyGame {
 	Texture kerek;
 	Sprite asd;
 
+	public int agyuTexture = 5;
+
+	public Texture getAgyuTexture(){
+		if(agyuTexture == 1){
+			return Assets.manager.get(Assets.AGYU_1);
+		}else if(agyuTexture == 2){
+			return Assets.manager.get(Assets.AGYU_2);
+		}else if(agyuTexture == 3){
+			return Assets.manager.get(Assets.AGYU_3);
+		}else if(agyuTexture == 4){
+			return Assets.manager.get(Assets.AGYU_4);
+		}else{
+			return Assets.manager.get(Assets.AGYU_5);
+		}
+	}
+
 	public Label.LabelStyle getLabelStyle() {
 		Label.LabelStyle style;
 		style = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();

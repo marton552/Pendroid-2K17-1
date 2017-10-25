@@ -27,7 +27,7 @@ public class GameStage extends MyStage {
 
     public GameStage(Batch batch, MyGdxGame game) {
         super(new ExtendViewport(1024, 576, new OrthographicCamera(1024, 576)), batch, game);
-        agyu = new Agyu();
+        agyu = new Agyu(game);
         backgroundActor = new BackgroundActor(this);
 
         label = new MyLabel("Label", game.getLabelStyle());
@@ -40,11 +40,6 @@ public class GameStage extends MyStage {
         //setCameraMoveToXY(128,72,0.5f,0.4f,100);
 
         addListener(new InputListener(){
-            @Override
-            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                super.touchUp(event, x, y, pointer, button);
-
-            }
 
             @Override
             public boolean mouseMoved(InputEvent event, float x, float y) {
@@ -54,7 +49,6 @@ public class GameStage extends MyStage {
 
 
         });
-
         for(int i=0; i<dots.length; i++){
             dots[i] = new OneSpriteStaticActor(Assets.manager.get(Assets.DOT_TEXTURE));
             addActor(dots[i]);
@@ -78,7 +72,10 @@ public class GameStage extends MyStage {
 	float WORLD_HEIGHT = getViewport().getWorldWidth();
 	int ax = 0;
         float[] floats = Core.calcAngle(x,y,v);
-	if (Float.isNaN(floats[0]) || Float.isNaN(floats[1])){
+        floats[0] *= Core.r2d;
+        floats[1] *= Core.r2d;
+
+        if (Float.isNaN(floats[0]) || Float.isNaN(floats[1])){
 		label.setText("x  = " + x + "\r\ny  = " + y + "\r\nv0 = " + v + "\r\nTúl messze van\r\n");
        		for(int i=0; i<dots.length; i++){
         	    dots[i].setVisible(false);
@@ -88,8 +85,8 @@ public class GameStage extends MyStage {
 		agyu.setAngle(floats[ax]);
        		for(int i=0; i<dots.length; i++){
         		dots[i].setVisible(true);
-			dots[i].setPosition((WORLD_HEIGHT / dots.length) * i, Core.calcHeight((WORLD_HEIGHT / dots.length) * i, floats[ax], v));
-			System.out.println(((WORLD_HEIGHT / dots.length) * i) + " " + Core.calcHeight((WORLD_HEIGHT / dots.length) * i, floats[ax], v));
+			dots[i].setPosition((WORLD_HEIGHT / dots.length) * i, Core.r2d * Core.calcHeight((WORLD_HEIGHT / dots.length) * i, floats[ax], v));
+			System.out.println(((WORLD_HEIGHT / dots.length) * i) + " " + Core.r2d * Core.calcHeight((WORLD_HEIGHT / dots.length) * i, floats[ax], v));
 	        }
 		System.out.println("");
 	}
