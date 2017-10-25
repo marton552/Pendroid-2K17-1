@@ -61,7 +61,7 @@ public class Assets {
 
 	public static final AssetDescriptor<Texture> ANIM_KACSA = new AssetDescriptor<Texture>("anim/duck.png", Texture.class);
 	public static final AssetDescriptor<Texture> ANIM_ROBBANAS = new AssetDescriptor<Texture>("anim/robbanas.png", Texture.class);
-	public static final AssetDescriptor<Texture> ANIM_LOADING = new AssetDescriptor<Texture>("anim/loading.png", Texture.class);
+	public static final AssetDescriptor<Texture> ANIM_LOADING = new AssetDescriptor<Texture>("atlasok/loading2.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> WHITE_TEXTURE = new AssetDescriptor<Texture>("ui_textures/white.png", Texture.class);
 	public static final AssetDescriptor<Texture> FULLWHITE_TEXTURE = new AssetDescriptor<Texture>("ui_textures/fullwhite.png", Texture.class);
