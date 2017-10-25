@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
-public class DataActor extends Actor {
+public class MyLabel extends Label {
 	BitmapFont font;
 	float x = 0;
 	float y = 0;
@@ -14,14 +14,9 @@ public class DataActor extends Actor {
 	boolean ok = false;
 	boolean show = false;
 
-    public DataActor(){
+    public MyLabel(){
         font = new BitmapFont();
         font.setColor(0.5f,0.4f,0.2f,1);
-    }
-
-    //@Override
-    public void draw(SpriteBatch batch) {
-         font.draw(batch, "x = " + x, 0, 0);
     }
 
 }
