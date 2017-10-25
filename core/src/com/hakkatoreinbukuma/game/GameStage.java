@@ -18,6 +18,7 @@ import com.hakkatoreinbukuma.game.MyBaseClasses.UI.MyLabel;
 public class GameStage extends MyStage {
 
     Agyu agyu;
+    Kerek kerek;
     BackgroundActor backgroundActor;
 	MyLabel label;
 	private float v = 100;
@@ -28,12 +29,15 @@ public class GameStage extends MyStage {
     public GameStage(Batch batch, MyGdxGame game) {
         super(new ExtendViewport(1024, 576, new OrthographicCamera(1024, 576)), batch, game);
         agyu = new Agyu(game);
+        kerek = new Kerek(game);
+        kerek.setPosition(10, 0);
         backgroundActor = new BackgroundActor(this);
 
         label = new MyLabel("Label", game.getLabelStyle());
 
         addActor(backgroundActor);
         addActor(agyu);
+        addActor(kerek);
         addActor(label);
         //setCameraResetToLeftBottomOfScreen();
         //((OrthographicCamera)getCamera()).zoom = 0.7f;
@@ -55,6 +59,10 @@ public class GameStage extends MyStage {
         }
 
         agyuChanged();
+    }
+
+    public void fire(){
+        System.out.println("Fire!");
     }
 
     public void setXY(float x, float y){

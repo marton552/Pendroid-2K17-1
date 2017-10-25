@@ -5,7 +5,7 @@ import com.hakkatoreinbukuma.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 
 public class Bullet extends OneSpriteStaticActor {
 
-    public Bullet(Texture texture) {
-        super(texture);
+    public Bullet(MyGdxGame game) {
+        super(game.getBulletTexture(game.bulletTexture));
     }
 }

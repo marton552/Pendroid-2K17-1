@@ -40,6 +40,14 @@ public class MenuStage extends MyStage {
         MyButton skinsButton = new MyButton("Skins", game.getButtonStyle());
         skinsButton.setPosition(getViewport().getWorldWidth() / 2 - playButton.getWidth() / 2, getViewport().getWorldHeight() - 360);
 
+        skinsButton.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                game.setScreen(new SkinMenuScreen(game));
+            }
+        });
+
         MyButton aboutButton = new MyButton("About", game.getButtonStyle());
         aboutButton.setPosition(getViewport().getWorldWidth() / 2 - playButton.getWidth() / 2, getViewport().getWorldHeight() - 420);
 

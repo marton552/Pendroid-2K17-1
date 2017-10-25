@@ -27,18 +27,46 @@ public class MyGdxGame extends MyGame {
 	Sprite asd;
 
 	public int agyuTexture = 5;
+	public int bulletTexture = 5;
+	public int wheelTexture = 4;
 
-	public Texture getAgyuTexture(){
-		if(agyuTexture == 1){
+	public Texture getAgyuTexture(int textureID){
+		if(textureID == 1){
 			return Assets.manager.get(Assets.AGYU_1);
-		}else if(agyuTexture == 2){
+		}else if(textureID == 2){
 			return Assets.manager.get(Assets.AGYU_2);
-		}else if(agyuTexture == 3){
+		}else if(textureID == 3){
 			return Assets.manager.get(Assets.AGYU_3);
-		}else if(agyuTexture == 4){
+		}else if(textureID == 4){
 			return Assets.manager.get(Assets.AGYU_4);
 		}else{
 			return Assets.manager.get(Assets.AGYU_5);
+		}
+	}
+
+	public Texture getBulletTexture(int textureID){
+		if(textureID == 1){
+			return Assets.manager.get(Assets.LOVEDEK_1);
+		}else if(textureID == 2){
+			return Assets.manager.get(Assets.LOVEDEK_2);
+		}else if(textureID == 3){
+			return Assets.manager.get(Assets.LOVEDEK_3);
+		}else if(textureID == 4){
+			return Assets.manager.get(Assets.LOVEDEK_4);
+		}else{
+			return Assets.manager.get(Assets.LOVEDEK_5);
+		}
+	}
+
+	public Texture getWheelTexture(int textureID){
+		if(textureID == 1){
+			return Assets.manager.get(Assets.KEREK_1);
+		}else if(textureID == 2){
+			return Assets.manager.get(Assets.KEREK_2);
+		}else if(textureID == 3){
+			return Assets.manager.get(Assets.KEREK_3);
+		}else{
+			return Assets.manager.get(Assets.KEREK_4);
 		}
 	}
 
@@ -78,45 +106,6 @@ public class MyGdxGame extends MyGame {
 		setScreen(new LoadingScreen(this));
 	}
 
-	/*
-	@Override
-	public void create () {
-		batch = new SpriteBatch();
-		agyu = new Texture("ágyú.png");
-		kerek = new Texture("kerék.png");
 
-		asd = new Sprite(agyu);
-		asd.setRotation(30);
-
-
-	}
-
-	@Override
-	public void render () {
-		float mx = Gdx.input.getX();
-		float my = Gdx.input.getY();
-
-		float angle = (MathUtils.radiansToDegrees * (float)Math.atan((Gdx.graphics.getHeight() - my) / mx));
-
-        Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		batch.begin();
-
-		asd.setRotation(angle);
-		asd.draw(batch);
-
-
-		batch.draw(kerek, 25, 0);
-		batch.end();
-	}
-	
-	@Override
-	public void dispose () {
-		batch.dispose();
-		agyu.dispose();
-		kerek.dispose();
-
-	}
-	*/
 }
 

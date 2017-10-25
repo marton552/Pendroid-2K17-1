@@ -68,6 +68,10 @@ public class Assets {
 
 	public static final AssetDescriptor<Texture> DOT_TEXTURE = new AssetDescriptor<Texture>("Pont.png", Texture.class);
 
+	public static final AssetDescriptor<TextureAtlas> TITLE_ATLAS = new AssetDescriptor<TextureAtlas>("atlasok/title.atlas", TextureAtlas.class);
+
+	public static final AssetDescriptor<Texture> FIREBTN_TEXTURE = new AssetDescriptor<Texture>("Fire.png", Texture.class);
+
 
 	public static void prepare() {
 		manager = new AssetManager();
@@ -110,6 +114,10 @@ public class Assets {
 		manager.load(FULLWHITE_TEXTURE);
 
 		manager.load(DOT_TEXTURE);
+
+		manager.load(TITLE_ATLAS);
+
+		manager.load(FIREBTN_TEXTURE);
 
 		manager.load(ALEGREYAREGULAR_FONT);
 
