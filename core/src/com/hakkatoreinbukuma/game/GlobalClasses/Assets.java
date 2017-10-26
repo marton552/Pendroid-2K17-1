@@ -67,6 +67,8 @@ public class Assets {
 
 	public static final AssetDescriptor<Texture> WHITE_TEXTURE = new AssetDescriptor<Texture>("ui_textures/white.png", Texture.class);
 	public static final AssetDescriptor<Texture> FULLWHITE_TEXTURE = new AssetDescriptor<Texture>("ui_textures/fullwhite.png", Texture.class);
+	public static final AssetDescriptor<Texture> BLACK_TEXTURE = new AssetDescriptor<Texture>("ui_textures/black.png", Texture.class);
+
 
 	public static final AssetDescriptor<Texture> DOT_TEXTURE = new AssetDescriptor<Texture>("Pont.png", Texture.class);
 
@@ -100,6 +102,12 @@ public class Assets {
 
 	//ANIM
 	public static final AssetDescriptor<TextureAtlas> EXPLODE_ATLAS = new AssetDescriptor<TextureAtlas>("anim/robbanas.atlas", TextureAtlas.class);
+
+	//Slider
+	public static final AssetDescriptor<Texture> SLIDER_BG = new AssetDescriptor<Texture>("ui_textures/slider.png", Texture.class);
+	public static final AssetDescriptor<Texture> SLIDER_KNOB = new AssetDescriptor<Texture>("ui_textures/sliderknob.png", Texture.class);
+	public static final AssetDescriptor<Texture> SLIDER_KNOBH = new AssetDescriptor<Texture>("ui_textures/sliderknob2.png", Texture.class);
+
 
 
 
@@ -145,6 +153,7 @@ public class Assets {
 
 		manager.load(WHITE_TEXTURE);
 		manager.load(FULLWHITE_TEXTURE);
+		manager.load(BLACK_TEXTURE);
 
 		manager.load(DOT_TEXTURE);
 
@@ -173,6 +182,10 @@ public class Assets {
 		manager.load(GAME3_MUSIC);
 
 		manager.load(EXPLODE_ATLAS);
+
+		manager.load(SLIDER_BG);
+		manager.load(SLIDER_KNOB);
+		manager.load(SLIDER_KNOBH);
 
 		manager.load(ALEGREYAREGULAR_FONT);
 

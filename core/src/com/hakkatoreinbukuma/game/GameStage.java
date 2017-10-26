@@ -4,8 +4,10 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
@@ -82,6 +84,7 @@ public class GameStage extends MyStage {
                     bullet.setVisible(false);
                     duck.alive = false;
                     isFire = false;
+
                     Timer timer = new Timer();
                     timer.scheduleTask(new Timer.Task() {
                         @Override
@@ -120,7 +123,6 @@ public class GameStage extends MyStage {
 
         duck = new Duck(game, this);
         kerek.setPosition(10, 0);
-
 
         label = new MyLabel("Label", game.getLabelStyle());
 
