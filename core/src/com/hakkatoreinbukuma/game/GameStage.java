@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Slider;
+import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.hakkatoreinbukuma.game.GlobalClasses.Assets;
@@ -19,6 +21,7 @@ public class GameStage extends MyStage {
 
     Agyu agyu;
     Kerek kerek;
+    Duck duck;
     BackgroundActor backgroundActor;
 	MyLabel label;
 	private float v = 100;
@@ -26,10 +29,25 @@ public class GameStage extends MyStage {
 	private float y = 100;
 	private OneSpriteStaticActor[] dots = new OneSpriteStaticActor[20];
 
+    @Override
+    public void act(float delta) {
+        super.act(delta);
+        duck.act(delta);
+    }
+
+    @Override
+    public void draw() {
+        super.draw();
+        getBatch().begin();
+        duck.draw(getBatch());
+        getBatch().end();
+    }
+
     public GameStage(Batch batch, MyGdxGame game) {
         super(new ExtendViewport(1024, 576, new OrthographicCamera(1024, 576)), batch, game);
         agyu = new Agyu(game);
         kerek = new Kerek(game);
+        duck = new Duck(game, this);
         kerek.setPosition(10, 0);
         backgroundActor = new BackgroundActor(this);
 
@@ -39,12 +57,12 @@ public class GameStage extends MyStage {
         addActor(agyu);
         addActor(kerek);
         addActor(label);
+
         //setCameraResetToLeftBottomOfScreen();
         //((OrthographicCamera)getCamera()).zoom = 0.7f;
         //setCameraMoveToXY(128,72,0.5f,0.4f,100);
 
         addListener(new InputListener(){
-
             @Override
             public boolean mouseMoved(InputEvent event, float x, float y) {
                 setXY(x,y);
@@ -53,8 +71,10 @@ public class GameStage extends MyStage {
 
 
         });
+
         for(int i=0; i<dots.length; i++){
             dots[i] = new OneSpriteStaticActor(Assets.manager.get(Assets.DOT_TEXTURE));
+            dots[i].setVisible(false);
             addActor(dots[i]);
         }
 
@@ -91,7 +111,7 @@ public class GameStage extends MyStage {
 		agyu.setAngle(floats[ax]);
 
 		float pos;
-       		for(int i=0; i<dots.length; i++){
+       		for(int i=2; i<dots.length; i++){
 			pos = (float)(WORLD_WIDTH / dots.length) * (float)i;
         		dots[i].setVisible(true);
 			dots[i].setPosition(pos, Core.calcHeight(pos, floats[ax], v));

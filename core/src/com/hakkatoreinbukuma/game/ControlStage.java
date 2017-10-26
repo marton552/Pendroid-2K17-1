@@ -13,6 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -26,12 +27,14 @@ public class ControlStage extends MyStage {
     }
 
     GameStage gameStage;
+    private Slider slider;
 
     public ControlStage(Batch batch, MyGdxGame game, final GameStage gameStage) {
         super(new ExtendViewport(1024, 576, new OrthographicCamera(1024, 576)), batch, game);
         this.gameStage =gameStage;
+
 	//====================================================================
-        Slider slider = new Slider(10,400, 1, false, game.getSliderStyle());
+        slider = new Slider(10,400, 1, false, game.getSliderStyle());
         slider.addCaptureListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
@@ -42,6 +45,7 @@ public class ControlStage extends MyStage {
         slider.setPosition(getViewport().getWorldWidth()/2-200, getViewport().getWorldHeight()-50);
         slider.setSize(400,20);
         slider.setValue(200);
+
         setDebugAll(true);
 
         OneSpriteStaticActor fireButton = new OneSpriteStaticActor(Assets.manager.get(Assets.FIREBTN_TEXTURE));
@@ -55,6 +59,27 @@ public class ControlStage extends MyStage {
                 gameStage.fire();
             }
         });
+
+        addListener(new DragListener(){
+            @Override
+            public void drag(InputEvent event, float x, float y, int pointer) {
+                if((x >= slider.getX()) && (x <= slider.getX() + slider.getWidth())){
+                    if((y >= slider.getY()) && (y <= slider.getY() + slider.getHeight())){
+                    }else{
+                        gameStage.setXY(x, y);
+                    }
+                }else{
+                    gameStage.setXY(x, y);
+                }
+                super.drag(event, x, y, pointer);
+                /*if(!slider.isDragging()){
+                    gameStage.setXY(x, y);
+                }else{
+                    event.stop();
+                }*/
+            }
+        });
+
 
         addActor(slider);
         addActor(fireButton);

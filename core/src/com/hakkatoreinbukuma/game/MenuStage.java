@@ -61,6 +61,8 @@ public class MenuStage extends MyStage {
             }
         });
 
+
+
         addActor(bgActor);
         addActor(playButton);
         addActor(skinsButton);

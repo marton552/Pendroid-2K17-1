@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGeneratorLoader;
 import com.badlogic.gdx.graphics.g2d.freetype.FreetypeFontLoader;
@@ -73,6 +74,21 @@ public class Assets {
 	public static final AssetDescriptor<Texture> FIREBTN_TEXTURE = new AssetDescriptor<Texture>("Fire.png", Texture.class);
 
 
+	//BIRD
+	public static final AssetDescriptor<Texture> BIRD_LEFT = new AssetDescriptor<Texture>("bird/left.png", Texture.class);
+	public static final AssetDescriptor<Texture> BIRD_LEFT2 = new AssetDescriptor<Texture>("bird/left2.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> BIRD_LEFTUP = new AssetDescriptor<Texture>("bird/leftup.png", Texture.class);
+	public static final AssetDescriptor<Texture> BIRD_LEFTUP2 = new AssetDescriptor<Texture>("bird/leftup2.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> BIRD_RIGHT = new AssetDescriptor<Texture>("bird/right.png", Texture.class);
+	public static final AssetDescriptor<Texture> BIRD_RIGHT2 = new AssetDescriptor<Texture>("bird/right2.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> BIRD_RIGHTUP = new AssetDescriptor<Texture>("bird/rightup.png", Texture.class);
+	public static final AssetDescriptor<Texture> BIRD_RIGHTUP2 = new AssetDescriptor<Texture>("bird/rightup2.png", Texture.class);
+
+
+
 	public static void prepare() {
 		manager = new AssetManager();
 		Texture.setAssetManager(manager);
@@ -118,6 +134,21 @@ public class Assets {
 		manager.load(TITLE_ATLAS);
 
 		manager.load(FIREBTN_TEXTURE);
+
+		manager.load(BIRD_LEFT);
+		manager.load(BIRD_LEFT2);
+
+		manager.load(BIRD_LEFTUP);
+		manager.load(BIRD_LEFTUP2);
+
+		manager.load(BIRD_RIGHT);
+		manager.load(BIRD_RIGHT2);
+
+		manager.load(BIRD_RIGHTUP);
+		manager.load(BIRD_RIGHTUP2);
+
+
+
 
 		manager.load(ALEGREYAREGULAR_FONT);
 
