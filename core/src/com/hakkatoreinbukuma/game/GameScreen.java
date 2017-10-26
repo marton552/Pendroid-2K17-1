@@ -17,6 +17,7 @@ public class GameScreen extends MyScreen {
 
     public GameScreen(MyGdxGame game) {
         super(game);
+        GlobalMusic.playGameMusic();
         gameStage = new GameStage(spriteBatch, game);
         controlStage = new ControlStage(spriteBatch, game, gameStage);
         InputMultiplexer inputMultiplexer = new InputMultiplexer();

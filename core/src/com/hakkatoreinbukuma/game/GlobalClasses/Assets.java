@@ -4,6 +4,7 @@ import com.badlogic.gdx.assets.AssetDescriptor;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.FileHandleResolver;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -43,21 +44,21 @@ public class Assets {
 	public static final AssetDescriptor<Texture> BG_TEXTURE = new AssetDescriptor<Texture>("back2.png", Texture.class);
 	public static final AssetDescriptor<Texture> MENU_BG = new AssetDescriptor<Texture>("menu.png", Texture.class);
 
-	public static final AssetDescriptor<Texture> KEREK_1 = new AssetDescriptor<Texture>("kerek/wheel1.png", Texture.class);
-	public static final AssetDescriptor<Texture> KEREK_2 = new AssetDescriptor<Texture>("kerek/wheel2.png", Texture.class);
-	public static final AssetDescriptor<Texture> KEREK_3 = new AssetDescriptor<Texture>("kerek/wheel3.png", Texture.class);
-	public static final AssetDescriptor<Texture> KEREK_4 = new AssetDescriptor<Texture>("kerek/wheel4.png", Texture.class);
+	public static final AssetDescriptor<Texture> KEREK_1 = new AssetDescriptor<Texture>("kerek/wheel4.png", Texture.class);
+	public static final AssetDescriptor<Texture> KEREK_2 = new AssetDescriptor<Texture>("kerek/wheel3.png", Texture.class);
+	public static final AssetDescriptor<Texture> KEREK_3 = new AssetDescriptor<Texture>("kerek/wheel2.png", Texture.class);
+	public static final AssetDescriptor<Texture> KEREK_4 = new AssetDescriptor<Texture>("kerek/wheel1.png", Texture.class);
 
-	public static final AssetDescriptor<Texture> AGYU_1 = new AssetDescriptor<Texture>("cannon/cannon1.png", Texture.class);
-	public static final AssetDescriptor<Texture> AGYU_2 = new AssetDescriptor<Texture>("cannon/cannon2.png", Texture.class);
+	public static final AssetDescriptor<Texture> AGYU_1 = new AssetDescriptor<Texture>("cannon/cannon5.png", Texture.class);
+	public static final AssetDescriptor<Texture> AGYU_2 = new AssetDescriptor<Texture>("cannon/cannon4.png", Texture.class);
 	public static final AssetDescriptor<Texture> AGYU_3 = new AssetDescriptor<Texture>("cannon/cannon3.png", Texture.class);
-	public static final AssetDescriptor<Texture> AGYU_4 = new AssetDescriptor<Texture>("cannon/cannon4.png", Texture.class);
-	public static final AssetDescriptor<Texture> AGYU_5 = new AssetDescriptor<Texture>("cannon/cannon5.png", Texture.class);
+	public static final AssetDescriptor<Texture> AGYU_4 = new AssetDescriptor<Texture>("cannon/cannon2.png", Texture.class);
+	public static final AssetDescriptor<Texture> AGYU_5 = new AssetDescriptor<Texture>("cannon/cannon1.png", Texture.class);
 
-	public static final AssetDescriptor<Texture> LOVEDEK_1 = new AssetDescriptor<Texture>("bullet/bullet1.png", Texture.class);
-	public static final AssetDescriptor<Texture> LOVEDEK_2 = new AssetDescriptor<Texture>("bullet/bullet2.png", Texture.class);
-	public static final AssetDescriptor<Texture> LOVEDEK_3 = new AssetDescriptor<Texture>("bullet/bullet3.png", Texture.class);
-	public static final AssetDescriptor<Texture> LOVEDEK_4 = new AssetDescriptor<Texture>("bullet/bullet4.png", Texture.class);
+	public static final AssetDescriptor<Texture> LOVEDEK_1 = new AssetDescriptor<Texture>("bullet/bullet4.png", Texture.class);
+	public static final AssetDescriptor<Texture> LOVEDEK_2 = new AssetDescriptor<Texture>("bullet/bullet3.png", Texture.class);
+	public static final AssetDescriptor<Texture> LOVEDEK_3 = new AssetDescriptor<Texture>("bullet/bullet2.png", Texture.class);
+	public static final AssetDescriptor<Texture> LOVEDEK_4 = new AssetDescriptor<Texture>("bullet/bullet1.png", Texture.class);
 	public static final AssetDescriptor<Texture> LOVEDEK_5 = new AssetDescriptor<Texture>("bullet/bullet5.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> ANIM_KACSA = new AssetDescriptor<Texture>("anim/duck.png", Texture.class);
@@ -86,6 +87,22 @@ public class Assets {
 
 	public static final AssetDescriptor<Texture> BIRD_RIGHTUP = new AssetDescriptor<Texture>("bird/rightup.png", Texture.class);
 	public static final AssetDescriptor<Texture> BIRD_RIGHTUP2 = new AssetDescriptor<Texture>("bird/rightup2.png", Texture.class);
+
+	public static final AssetDescriptor<Sound> CLICK_SOUND = new AssetDescriptor<Sound>("hangok/click.wav", Sound.class);
+	public static final AssetDescriptor<Sound> LOVES_SOUND = new AssetDescriptor<Sound>("hangok/loves.mp3", Sound.class);
+
+	public static final AssetDescriptor<Music> MENU_MUSIC = new AssetDescriptor<Music>("zene/menu.wav", Music.class);
+
+	//MUSIC
+	public static final AssetDescriptor<Music> GAME_MUSIC = new AssetDescriptor<Music>("zene/jatek.wav", Music.class);
+	public static final AssetDescriptor<Music> GAME2_MUSIC = new AssetDescriptor<Music>("zene/jatek2.wav", Music.class);
+	public static final AssetDescriptor<Music> GAME3_MUSIC = new AssetDescriptor<Music>("zene/jatek3.wav", Music.class);
+
+	//ANIM
+	public static final AssetDescriptor<TextureAtlas> EXPLODE_ATLAS = new AssetDescriptor<TextureAtlas>("anim/robbanas.atlas", TextureAtlas.class);
+
+
+
 
 
 
@@ -147,8 +164,15 @@ public class Assets {
 		manager.load(BIRD_RIGHTUP);
 		manager.load(BIRD_RIGHTUP2);
 
+		manager.load(CLICK_SOUND);
+		manager.load(LOVES_SOUND);
 
+		manager.load(MENU_MUSIC);
+		manager.load(GAME_MUSIC);
+		manager.load(GAME2_MUSIC);
+		manager.load(GAME3_MUSIC);
 
+		manager.load(EXPLODE_ATLAS);
 
 		manager.load(ALEGREYAREGULAR_FONT);
 
