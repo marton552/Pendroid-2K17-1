@@ -71,6 +71,25 @@ public class GameStage extends MyStage {
 
 
         });
+        addListener(new DragListener(){
+            @Override
+            public void touchDragged(InputEvent event, float x, float y, int pointer) {
+                setXY(x,y);
+                super.touchDragged(event, x, y, pointer);
+            }
+            @Override
+            public void drag(InputEvent event, float x, float y, int pointer) {
+                setXY(x,y);
+                super.drag(event, x, y, pointer);
+            }
+            @Override public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                setXY(x,y);
+                super.touchDown(event, x, y, pointer, button);
+		return true;
+            }
+
+
+        });
 
         for(int i=0; i<dots.length; i++){
             dots[i] = new OneSpriteStaticActor(Assets.manager.get(Assets.DOT_TEXTURE));
