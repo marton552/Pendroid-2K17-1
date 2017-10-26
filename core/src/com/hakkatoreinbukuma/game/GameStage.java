@@ -150,7 +150,7 @@ public class GameStage extends MyStage {
 
 
         });
-        addListener(new DragListener(){
+        /*addListener(new DragListener(){
             @Override
             public void touchDragged(InputEvent event, float x, float y, int pointer) {
                 setXY(x,y);
@@ -167,8 +167,8 @@ public class GameStage extends MyStage {
 		return true;
             }
 
-
         });
+*/
 
         for(int i=0; i<dots.length; i++){
             dots[i] = new OneSpriteStaticActor(Assets.manager.get(Assets.DOT_TEXTURE));
