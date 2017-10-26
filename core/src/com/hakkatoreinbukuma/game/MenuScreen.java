@@ -10,6 +10,7 @@ public class MenuScreen extends MyScreen{
     public MenuScreen(MyGdxGame game) {
         super(game);
         //setBackGroundColor(1, 1, 1);
+        GlobalMusic.playMenuMusic();
         menuStage = new MenuStage(spriteBatch, game);
         Gdx.input.setInputProcessor(menuStage);
 

@@ -24,6 +24,8 @@ public class Duck extends Sprite{
 
     private int ellapsedTime = 0;
 
+    public boolean alive = true;
+
 
     public Duck(MyGdxGame game, GameStage stage) {
         super(Assets.manager.get(Assets.BIRD_LEFT));

@@ -51,6 +51,14 @@ public class MenuStage extends MyStage {
         MyButton aboutButton = new MyButton("About", game.getButtonStyle());
         aboutButton.setPosition(getViewport().getWorldWidth() / 2 - playButton.getWidth() / 2, getViewport().getWorldHeight() - 420);
 
+        aboutButton.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                game.setScreen(new AboutScreen(game));
+            }
+        });
+
         MyButton quitButton = new MyButton("Quit", game.getButtonStyle());
         quitButton.setPosition(getViewport().getWorldWidth() / 2 - playButton.getWidth() / 2, getViewport().getWorldHeight() - 480);
 
@@ -60,7 +68,6 @@ public class MenuStage extends MyStage {
                 Gdx.app.exit();
             }
         });
-
 
 
         addActor(bgActor);

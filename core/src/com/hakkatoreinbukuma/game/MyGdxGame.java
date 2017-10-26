@@ -26,9 +26,11 @@ public class MyGdxGame extends MyGame {
 	Texture kerek;
 	Sprite asd;
 
-	public int agyuTexture = 5;
-	public int bulletTexture = 5;
-	public int wheelTexture = 4;
+	public int agyuTexture = 1;
+	public int bulletTexture = 1;
+	public int wheelTexture = 1;
+
+	public int seconds = 0;
 
 	public Texture getAgyuTexture(int textureID){
 		if(textureID == 1){
