@@ -61,13 +61,11 @@ public class Assets {
 	public static final AssetDescriptor<Texture> LOVEDEK_4 = new AssetDescriptor<Texture>("bullet/bullet1.png", Texture.class);
 	public static final AssetDescriptor<Texture> LOVEDEK_5 = new AssetDescriptor<Texture>("bullet/bullet5.png", Texture.class);
 
-	public static final AssetDescriptor<Texture> ANIM_KACSA = new AssetDescriptor<Texture>("anim/duck.png", Texture.class);
 	public static final AssetDescriptor<Texture> ANIM_ROBBANAS = new AssetDescriptor<Texture>("anim/robbanas.png", Texture.class);
 	public static final AssetDescriptor<Texture> ANIM_LOADING = new AssetDescriptor<Texture>("atlasok/loading2.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> WHITE_TEXTURE = new AssetDescriptor<Texture>("ui_textures/white.png", Texture.class);
 	public static final AssetDescriptor<Texture> FULLWHITE_TEXTURE = new AssetDescriptor<Texture>("ui_textures/fullwhite.png", Texture.class);
-	public static final AssetDescriptor<Texture> BLACK_TEXTURE = new AssetDescriptor<Texture>("ui_textures/black.png", Texture.class);
 
 
 	public static final AssetDescriptor<Texture> DOT_TEXTURE = new AssetDescriptor<Texture>("Pont.png", Texture.class);
@@ -147,13 +145,11 @@ public class Assets {
 		manager.load(LOVEDEK_4);
 		manager.load(LOVEDEK_5);
 
-		manager.load(ANIM_KACSA);
 		manager.load(ANIM_LOADING);
 		manager.load(ANIM_ROBBANAS);
 
 		manager.load(WHITE_TEXTURE);
 		manager.load(FULLWHITE_TEXTURE);
-		manager.load(BLACK_TEXTURE);
 
 		manager.load(DOT_TEXTURE);
 
